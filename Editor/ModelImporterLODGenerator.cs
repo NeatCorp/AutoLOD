@@ -232,6 +232,8 @@ namespace Unity.AutoLOD
                         for (int j = 0; j < renderers.Length; j++)
                         {
                             var r = renderers[j];
+							if (r == null)
+								continue;
 
                             var lodTransform = EditorUtility.CreateGameObjectWithHideFlags(r.name,
                                 k_DefaultHideFlags, typeof(MeshFilter), typeof(MeshRenderer)).transform;
