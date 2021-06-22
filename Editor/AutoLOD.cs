@@ -683,7 +683,9 @@ namespace Unity.AutoLOD
             }
         }
 
-        [PreferenceItem("AutoLOD")]
+#pragma warning disable 0618
+		[PreferenceItem("AutoLOD")]
+#pragma warning restore 0618
         static void PreferencesGUI()
         {
             EditorGUILayout.BeginVertical();

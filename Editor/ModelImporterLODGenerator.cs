@@ -126,6 +126,8 @@ namespace Unity.AutoLOD
 
                         foreach (var mf in originalMeshFilters)
                         {
+							if (mf.GetComponent<MeshRenderer>() == null)
+								continue;
                             var inputMesh = mf.sharedMesh;
 
                             var lodTransform = EditorUtility.CreateGameObjectWithHideFlags(mf.name,
