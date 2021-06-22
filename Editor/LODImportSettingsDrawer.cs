@@ -40,7 +40,9 @@ namespace Unity.AutoLOD
                 var maxPolyCount = EditorGUILayout.IntField("Initial LOD Max Poly Count", initialLODMaxPolyCountProperty.intValue);
                 if (EditorGUI.EndChangeCheck())
                     initialLODMaxPolyCountProperty.intValue = maxPolyCount;
-            }
+				
+				EditorGUILayout.PropertyField(property.FindPropertyRelative("qualityOverrides"));
+			}
 
             EditorGUILayout.Space();
             EditorGUILayout.Space();

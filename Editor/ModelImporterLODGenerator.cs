@@ -155,7 +155,10 @@ namespace Unity.AutoLOD
                             var meshLOD = MeshLOD.GetGenericInstance(meshSimplifierType);
                             meshLOD.InputMesh = inputMesh;
                             meshLOD.OutputMesh = outputMesh;
-                            meshLOD.Quality = Mathf.Pow(0.5f, i);
+							if (importSettings.qualityOverrides != null && i < importSettings.qualityOverrides.Length-1)
+								meshLOD.Quality = importSettings.qualityOverrides[i];
+							else
+								meshLOD.Quality = Mathf.Pow(0.5f, i);
                             meshLODs.Add(meshLOD);
                         }
 
